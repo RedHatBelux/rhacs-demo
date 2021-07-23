@@ -35,10 +35,10 @@ oc create -f quarkus-pipeline.yaml
   * Select Generate Token.
   * Enter a name for the token and select a role that provides the required level of access, in this case Continuous Integration.
   * Select Generate
-  * Copy the generated token and paste the base64 encoded token into the `code(roxsecrets.yaml)` file by replacing `code(BASE64_API_TOKEN)*`.
-  * Copy the base64 encoded central FQDN (Example: `code(central-stackrox.apps.ocp4.redhat.arrowlabs.be:443)` base into the `code(roxsecrets.yaml)` file by replacing `code(BASE64_ENDPOINT_INCLUDING_PORT_443)*`.
-    * Reminder: You can encode both the API Token and the FQDN by using the command `code(base64)`. Example with the FQDN `code(echo -n 'central-stackrox.apps.ocp4.redhat.arrowlabs.be:443' | base64)`.
-  * `code(oc create -f roxsecrets.yaml)`
+  * Copy the generated token and paste the base64 encoded token into the `roxsecrets.yaml` file by replacing `BASE64_API_TOKEN`.
+  * Copy the base64 encoded central FQDN (Example: `central-stackrox.apps.ocp4.redhat.arrowlabs.be:443` base into the `roxsecrets.yaml` file by replacing `BASE64_ENDPOINT_INCLUDING_PORT_443`.
+    * Reminder: You can encode both the API Token and the FQDN by using the command `base64`. Example with the FQDN `echo -n 'central-stackrox.apps.ocp4.redhat.arrowlabs.be:443' | base64`.
+  * `oc create -f roxsecrets.yaml`
 
 * Create ACS policy from acs_quarkus_policy.json which will detect an issue in the built image via the RHACS web console.
 ![acs policy](img/acs.png)
