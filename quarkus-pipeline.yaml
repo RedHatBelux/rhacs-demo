@@ -82,7 +82,7 @@ spec:
         - fetch-repository
       taskRef:
         kind: ClusterTask
-        name: s2i-java-11
+        name: s2i-java
       workspaces:
         - name: source
           workspace: workspace
